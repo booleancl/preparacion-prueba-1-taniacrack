@@ -1,0 +1,54 @@
+#!/bin/bash
+
+debug_check_directories() {
+  echo "**********************************************"
+  echo "🔎 👀 Revisión Automática  👀 🔎               "
+  echo "**********************************************"
+  echo "tu estructura de carpetas es:"
+  tree --noreport soymas/carreras
+  echo "**********************************************"
+  echo "la estructura que debemos hacer es:"
+  echo "soymas/carreras
+├── administracion
+│   ├── modulo-00
+│   │   └── index.md
+│   └── modulo-01
+│       └── index.md
+├── artes-culinarias
+│   └── lista.txt
+├── peluqueria
+│   └── lista.txt
+└── programacion
+    ├── modulo-00
+    │   └── index.md
+    └── modulo-01
+        └── index.md"
+  echo "**********************************************"
+}
+
+test_check_directories() {
+  ./comandos1
+
+  debug_check_directories
+
+  actual_tree=$(tree -i --noreport soymas/carreras)
+  expected="soymas/carreras
+administracion
+modulo-00
+index.md
+modulo-01
+index.md
+artes-culinarias
+lista.txt
+peluqueria
+lista.txt
+programacion
+modulo-00
+index.md
+modulo-01
+index.md"
+
+  assertEquals "ERROR" "$actual_tree" "$expected" 
+}
+
+. shunit2

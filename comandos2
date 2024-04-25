@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+# Eliminar la carpeta "academia" dentro de la carpeta soymas
+cd soymas
+

@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+# Agregar las instrucciones para crear la estructura de carpetas
+cd soymas
+
+
