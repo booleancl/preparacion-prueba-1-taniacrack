@@ -1,5 +1,9 @@
-#!/bin/bash -e
+}{}p´ash -e
 
 # Eliminar la carpeta "academia" dentro de la carpeta soymas
-cd soymas
-
+cd soy mas
+cd academia
+rm lista.txt
+rm pendientes.txt
+cd ..
+rmdir academia
